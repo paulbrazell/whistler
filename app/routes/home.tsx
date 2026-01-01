@@ -85,7 +85,7 @@ export default function Home() {
       <Container maxWidth={false} sx={{ py: 5 }}>
         {/* Hero Section */}
         <Box sx={{ mb: 10 }}>
-          <img src="app/assets/Spotify Header.jpg" />
+          <img src="/Spotify Header.jpg" />
 
           {/* Everywhere But Here Announcement */}
 
@@ -153,7 +153,7 @@ export default function Home() {
               >
                 <Box sx={{ textAlign: "center", color: "text.secondary" }}>
                   <img
-                    src="app/assets/Everywhere But Here Art.jpg"
+                    src="/Everywhere But Here Art.jpg"
                     alt="Everywhere But Here album cover"
                     style={{
                       width: "100%",
