@@ -6,9 +6,36 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
+import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 
 import type { Route } from "./+types/root";
 import "./app.css";
+
+// Create a custom theme
+const theme = createTheme({
+  palette: {
+    mode: "light",
+    primary: {
+      main: "#000000",
+    },
+    secondary: {
+      main: "#dc2626", // red-600 for the Listen Now button
+    },
+    background: {
+      default: "#ffffff",
+      paper: "#ffffff",
+    },
+  },
+  typography: {
+    fontFamily: "Inter, system-ui, sans-serif",
+    h1: {
+      fontWeight: 700,
+    },
+    h2: {
+      fontWeight: 700,
+    },
+  },
+});
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -33,7 +60,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          {children}
+        </ThemeProvider>
         <ScrollRestoration />
         <Scripts />
       </body>
